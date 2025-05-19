@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('reset-password/{token}', function ($token) {
+    return response()->json(['token' => $token]);
+})->name('password.reset');
 
 Route::get('/', function () {
     return view('welcome');
